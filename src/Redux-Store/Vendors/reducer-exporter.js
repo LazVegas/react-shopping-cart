@@ -1,0 +1,1 @@
+export { default as tshirtReducer } from './T-shirts/actions-reducers'

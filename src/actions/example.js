@@ -1,4 +1,4 @@
-import store from '../store'
+import store from '../Redux-Store/store'
 
 export function greet(greeting) {
   store.dispatch({

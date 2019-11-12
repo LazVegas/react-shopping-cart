@@ -1,19 +1,28 @@
 import React from 'react'
-import 'normalize.css/normalize.css'
 import '../styles/App.css'
 import { Provider } from 'react-redux'
-import store from '../store'
+import store from '../Redux-Store/store'
+import { useDataHook } from '../Redux-Store/Vendors/T-shirts/actions-reducers'
+import DisplayFilter from "../components/DisplayFilter"
+import DisplayProducts from "../components/DisplayProducts"
+import DisplayCart from "../components/DisplayCart"
 
-import Button from './Button'
-import Greeting from './Greeting'
-
-export default props => {
+function Wrap() {
   return (
     <Provider store={store}>
-      <div>
-        <Button />
-        <Greeting />
-      </div>
+      <App />
     </Provider>
   )
 }
+  const App = () => {
+    const items = useDataHook()
+    return (
+      <div className="main">
+          <DisplayFilter />
+          <DisplayProducts goods = {items} />
+          <DisplayCart />
+      </div>
+    )
+  }
+
+export default Wrap
