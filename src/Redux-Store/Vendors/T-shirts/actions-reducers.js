@@ -11,6 +11,7 @@ const CART_TOGGLE = "CART_TOGGLE"
 const initialState = {
     products: [],
     cart_toggle : false
+    
 }
 
 export default function tshirtReducer (state = initialState, action) {
